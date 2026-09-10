@@ -59,13 +59,13 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .nav-wrap { height: 74px; display: flex; align-items: center; gap: 28px; }
-.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; }
+.brand { display: inline-flex; align-items: center; gap: 0; font-weight: 700; }
 .brand-mark {
   width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center;
   color: #04131b; background: linear-gradient(135deg, var(--accent), #b9ffe9); font-family: "Space Grotesk"; font-weight: 800;
   box-shadow: 0 8px 30px rgba(53,208,186,.25);
 }
-.brand-text { white-space: nowrap; }
+.brand-text { white-space: nowrap; font-size: 18px; font-weight: 700; color: #f4f8fc; }
 .nav { margin-left: auto; display: flex; gap: 24px; font-size: 14px; color: #c6d2df; }
 .nav a { transition: .2s ease; }
 .nav a:hover { color: white; }
@@ -197,7 +197,7 @@ a { color: inherit; text-decoration: none; }
   .expertise-grid { grid-template-columns:1fr; }
   .contact-card { padding:30px 22px; }
   .footer-inner { flex-direction:column; }
-  .brand-text { display:none; }
+  .brand-text { display:inline; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -208,25 +208,6 @@ a { color: inherit; text-decoration: none; }
 /* =========================================================
    PROFILE IMAGE FIX — keeps the GitHub photo inside the card
    ========================================================= */
-.brand-photo {
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  display: block;
-  overflow: hidden;
-  border-radius: 13px;
-  border: 2px solid rgba(53, 208, 186, .55);
-  background: #10233a;
-}
-.brand-photo img {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  display: block;
-  object-fit: cover;
-  object-position: center 18%;
-}
-
 .hero-card {
   isolation: isolate;
 }
