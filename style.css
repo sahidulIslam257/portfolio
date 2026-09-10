@@ -204,3 +204,115 @@ a { color: inherit; text-decoration: none; }
   * { scroll-behavior:auto !important; }
   .reveal { opacity:1;transform:none;transition:none; }
 }
+
+/* =========================================================
+   PROFILE IMAGE FIX — keeps the GitHub photo inside the card
+   ========================================================= */
+.brand-photo {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: block;
+  overflow: hidden;
+  border-radius: 13px;
+  border: 2px solid rgba(53, 208, 186, .55);
+  background: #10233a;
+}
+.brand-photo img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  display: block;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.hero-card {
+  isolation: isolate;
+}
+.hero-card > *:not(.orb) {
+  position: relative;
+  z-index: 2;
+}
+.profile-head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.avatar {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  flex: 0 0 112px;
+  display: block;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 3px solid rgba(53, 208, 186, .58);
+  background: linear-gradient(135deg, #d9fff5, var(--accent), var(--accent-2));
+  box-shadow: 0 14px 32px rgba(0,0,0,.25);
+}
+.avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center 18% !important;
+  border-radius: 22px;
+}
+.avatar-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #07111f;
+}
+.profile-identity {
+  min-width: 0;
+}
+.profile-identity h2,
+.hero-card .profile-identity h2 {
+  margin: 0 0 5px;
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 28px;
+  line-height: 1.08;
+}
+.profile-identity p,
+.hero-card .profile-identity p {
+  margin: 0;
+  color: #9eb0c1;
+  font-size: 15px;
+}
+.hero-card .status {
+  margin: 0 0 24px;
+}
+.hero-card .metrics {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .profile-head {
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .avatar {
+    width: 92px;
+    height: 92px;
+    flex-basis: 92px;
+    border-radius: 22px;
+  }
+  .avatar img {
+    border-radius: 18px;
+  }
+  .profile-identity h2,
+  .hero-card .profile-identity h2 {
+    font-size: 24px;
+  }
+}
